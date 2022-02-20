@@ -1,23 +1,22 @@
-import React, { useState } from 'react'
-import Home from './components/Home'
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header.js'
+import SignUp from './components/auth/SignUp'
 
 const App = () => {
-  const [user, setUser] = useState(null)
-
-
   return (
-    <div className="App">
-      {/* <Logo />
-      <Navbar /> */}
-      <Home />
-      
-      {/* <Game /> */}
-  
-    </div>
-  );
+		<BrowserRouter>
+      <main className='App'>
+        <Header />
+        <Routes>
+          <Route path='/sign-up' element={<SignUp />} />
+        </Routes>
 
-
+      </main>
+		</BrowserRouter>
+	)
 }
+
 
 
 
